@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+venv/
+env/
+.venv/
+.env_dir/
+
+# Environment Variables (CRITICAL)
+.env
+.env.local
+.env.*.local
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Streamlit
+.streamlit/
+!/.streamlit/config.toml
+
+# Project Specific / Temporary Outputs
+data/
+outputs/
+temp/
+*.json
+!tests/*.json
