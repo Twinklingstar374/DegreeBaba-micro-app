@@ -15,12 +15,12 @@ class WPClient:
         self.auth = (wp_user, wp_password)
         self.headers = {"Content-Type": "application/json"}
 
-    def _get_posts(self, search_title: str) -> Optional[Dict]:
+    def _get_posts(self, search_title: str, post_type: str = "pages") -> Optional[Dict]:
         """
         Search for a post by title.
         Returns the first matching post dictionary, or None if no match is found.
         """
-        url = f"{self.wp_url}/wp-json/wp/v2/posts"
+        url = f"{self.wp_url}/wp-json/wp/v2/{post_type}"
         params = {"search": search_title, "_fields": "id,title"}
         
         try:
@@ -43,7 +43,8 @@ class WPClient:
         If it exists, updates it. If not, creates a new draft.
         Prevents duplicates.
         """
-        existing_post = self._get_posts(title)
+        post_type = "pages"
+        existing_post = self._get_posts(title, post_type=post_type)
         
         # Structure the payload for ACF (assuming ACF to REST API is enabled)
         wp_payload = {
@@ -55,7 +56,7 @@ class WPClient:
         if existing_post:
             post_id = existing_post["id"]
             logger.info(f"Post '{title}' exists (ID: {post_id}). Updating...")
-            url = f"{self.wp_url}/wp-json/wp/v2/posts/{post_id}"
+            url = f"{self.wp_url}/wp-json/wp/v2/{post_type}/{post_id}"
             try:
                 response = requests.post(url, json=wp_payload, auth=self.auth, headers=self.headers)
                 response.raise_for_status()
@@ -65,7 +66,7 @@ class WPClient:
                 return {"status": "error", "message": str(e)}
         else:
             logger.info(f"Post '{title}' not found. Creating new draft...")
-            url = f"{self.wp_url}/wp-json/wp/v2/posts"
+            url = f"{self.wp_url}/wp-json/wp/v2/{post_type}"
             try:
                 response = requests.post(url, json=wp_payload, auth=self.auth, headers=self.headers)
                 response.raise_for_status()

@@ -27,15 +27,7 @@ class SemanticMapper:
         """
         if not self.client:
             logger.warning("Gemini/OpenAI API key not found. Skipping AI semantic mapping.")
-            # Return dummy mapping for testing without API key
-            return {
-                field: ExtractedField(
-                    value="[AI Mapping Disabled - Mock Data]",
-                    source_heading="Mock",
-                    extraction_method=ExtractionMethod.AI_SEMANTIC_MAPPING.value,
-                    confidence=0.5
-                ) for field in target_fields
-            }
+            return {}
 
         prompt = (
             f"You are a strict data extraction system. Map the following HTML content sections "

@@ -17,6 +17,8 @@ class ReviewReport(BaseModel):
     extracted_fields: Dict[str, Any] = Field(default_factory=dict)
     warnings: List[ValidationWarning] = Field(default_factory=list)
     fields_needing_review: List[str] = Field(default_factory=list)
+    unmapped_sections: List[str] = Field(default_factory=list)
+    quality_score: int = 0
     is_publishable: bool = False
 
     def add_warning(self, field_name: str, issue_type: str, message: str, severity: str = "warning"):

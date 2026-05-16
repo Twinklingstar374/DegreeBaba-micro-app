@@ -1,5 +1,6 @@
 from typing import Dict, Any
 from src.schemas.review_report import ReviewReport
+from src.schemas.page_fields import get_fields, get_required_fields
 from src.utils.tracking import ExtractedField
 from src.config.settings import settings
 
@@ -15,6 +16,7 @@ class ValidationEngine:
     def validate(self, document_name: str, page_type: str, extracted_data: Dict[str, ExtractedField]) -> ReviewReport:
         report = ReviewReport(document_name=document_name, page_type=page_type)
         report.is_publishable = True # Assume publishable until proven otherwise
+        required_fields = set(get_required_fields(page_type))
 
         for field_name, field_data in extracted_data.items():
             value = field_data.value
@@ -48,14 +50,53 @@ class ValidationEngine:
                      # but let's assume they are dicts or Pydantic models here.
                      pass
 
-                if field_name == "stats":
-                    for stat in value:
-                        if isinstance(stat, dict) and len(str(stat.get("value", ""))) > 6:
-                            report.add_warning(field_name, "stat_too_long", f"Stat '{stat.get('value')}' exceeds 6 characters.", severity="warning")
-                            field_data.flag_for_review()
-                            break
+            # 5. Check Stat length constraint
+            if isinstance(value, str) and (field_name.startswith("stat_") or (field_name.startswith("hero_stat_") and field_name.endswith("_value"))):
+                if len(value) > 6:
+                    report.add_warning(field_name, "stat_too_long", f"Stat '{value}' exceeds 6 characters.", severity="error")
+                    field_data.flag_for_review()
 
             # Store the final value or the field object in the report
             report.extracted_fields[field_name] = field_data
 
+        for field_name in get_fields(page_type):
+            if field_name in report.extracted_fields:
+                continue
+
+            placeholder = ExtractedField(
+                value=None,
+                source_heading=None,
+                extraction_method="not_found",
+                confidence=0.0,
+                needs_review=True,
+            )
+            report.extracted_fields[field_name] = placeholder
+            if field_name in required_fields:
+                report.add_warning(
+                    field_name,
+                    "missing_field",
+                    "Required ACF field was not found in the document.",
+                    severity="error",
+                )
+            else:
+                report.add_warning(
+                    field_name,
+                    "missing_optional_field",
+                    "Optional ACF field was not found in the document.",
+                    severity="warning",
+                )
+
+        mapped = sum(1 for item in report.extracted_fields.values() if getattr(item, "value", None))
+        total = max(len(report.extracted_fields), 1)
+        required_mapped = sum(
+            1
+            for field_name in required_fields
+            if field_name in report.extracted_fields and getattr(report.extracted_fields[field_name], "value", None)
+        )
+        required_total = max(len(required_fields), 1)
+        errors = sum(1 for warning in report.warnings if warning.severity == "error")
+        required_score = (required_mapped / required_total) * 70
+        coverage_score = (mapped / total) * 30
+        report.quality_score = max(0, min(100, round(required_score + coverage_score) - errors * 3))
+        
         return report

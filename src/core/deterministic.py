@@ -29,8 +29,10 @@ class DeterministicExtractor:
         for stat_type, pattern in self.stat_patterns.items():
             matches = pattern.findall(text)
             for match in matches:
+                # Ensure the stat matches the max 6 character constraint (e.g. "185K+")
+                cleaned_match = match.strip()[:6]
                 field = ExtractedField(
-                    value={"type": stat_type, "value": match},
+                    value={"type": stat_type, "value": cleaned_match},
                     source_heading=heading,
                     extraction_method=ExtractionMethod.REGEX.value,
                     confidence=0.95
