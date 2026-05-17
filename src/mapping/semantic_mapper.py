@@ -14,8 +14,8 @@ class SemanticMapper:
     Only used as a fallback when deterministic extraction is insufficient.
     """
 
-    def __init__(self):
-        api_key = settings.GEMINI_API_KEY or settings.OPENAI_API_KEY
+    def __init__(self, api_key_override: str = ""):
+        api_key = api_key_override or settings.GEMINI_API_KEY or settings.OPENAI_API_KEY
         self.client = OpenAI(
             api_key=api_key,
             base_url="https://generativelanguage.googleapis.com/v1beta/openai/"

@@ -467,8 +467,8 @@ def inject_css() -> None:
 
 
 @st.cache_resource
-def get_pipeline() -> ContentPipeline:
-    return ContentPipeline()
+def get_pipeline(ai_api_key: str = "") -> ContentPipeline:
+    return ContentPipeline(ai_api_key=ai_api_key)
 
 
 def init_state() -> None:
@@ -485,6 +485,7 @@ def init_state() -> None:
         "wp_site_url": os.getenv("WORDPRESS_SITE_URL", ""),
         "wp_username": os.getenv("WORDPRESS_USERNAME", ""),
         "wp_password": os.getenv("WORDPRESS_APP_PASSWORD", ""),
+        "ai_api_key": os.getenv("GEMINI_API_KEY", "") or os.getenv("OPENAI_API_KEY", ""),
         "wp_tested": False,
         "wp_connected": None,
     }
@@ -720,7 +721,7 @@ def render_upload_step() -> None:
         )
 
     if st.button("Parse & Validate File", type="primary", disabled=uploaded_file is None):
-        pipeline = get_pipeline()
+        pipeline = get_pipeline(st.session_state.get("ai_api_key", ""))
         with st.spinner("Parsing document, mapping ACF fields, and validating content..."):
             report = pipeline.process_file(uploaded_file, uploaded_file.name, st.session_state.page_type)
         st.session_state.report = report
@@ -959,10 +960,14 @@ def render_ai_mapping_review() -> None:
             st.rerun()
         return
 
-    st.markdown(
-        f'<div class="info-banner">The mapper flagged {len(fields)} fields because they are missing, thin, or below 80% confidence. Confirm them or choose a better ACF field.</div>',
-        unsafe_allow_html=True,
-    )
+        st.markdown(
+            f'<div class="info-banner">The mapper flagged {len(fields)} fields because they are missing, thin, or below 80% confidence. Confirm them or choose a better ACF field.</div>',
+            unsafe_allow_html=True,
+        )
+    if st.session_state.get("ai_api_key"):
+        st.caption("Gemini/OpenAI key is configured for semantic fallback during parsing. This screen is the human review layer for uncertain results.")
+    else:
+        st.caption("No AI key is configured, so these are deterministic mapping suggestions that need human review.")
     available_fields = get_fields(report.page_type)
 
     for field_name, field in fields:
@@ -996,7 +1001,7 @@ def render_ai_mapping_review() -> None:
         if st.button("Use AI Suggestions"):
             for _, field in fields:
                 field.needs_review = False
-            st.success("All suggestions accepted for this review session.")
+            st.success("All flagged mappings were accepted for this review session.")
     with c2:
         if st.button("Back to Validation", type="primary", use_container_width=True):
             set_screen("New Upload")
@@ -1058,9 +1063,17 @@ def render_settings() -> None:
         else:
             st.markdown('<div class="error-banner">Connection failed - check URL and credentials.</div>', unsafe_allow_html=True)
 
-    st.markdown('<div class="card"><h3>API Key</h3></div>', unsafe_allow_html=True)
-    st.text_input("Claude API Key", type="password", placeholder="sk-ant-...")
-    st.button("Save API Key", type="primary")
+    st.markdown('<div class="card"><h3>AI Mapping API Key</h3></div>', unsafe_allow_html=True)
+    ai_api_key = st.text_input(
+        "Gemini or OpenAI API Key",
+        value=st.session_state.ai_api_key,
+        type="password",
+        placeholder="Gemini/OpenAI API key",
+    )
+    if st.button("Save API Key", type="primary"):
+        st.session_state.ai_api_key = ai_api_key
+        get_pipeline.clear()
+        st.success("AI key saved for this session. Re-parse the document to use it for semantic fallback.")
 
 
 def main() -> None:

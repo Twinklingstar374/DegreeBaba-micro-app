@@ -20,12 +20,12 @@ class ContentPipeline:
     Orchestrates the conversion of DOCX files into validated ACF JSON payloads.
     """
 
-    def __init__(self):
+    def __init__(self, ai_api_key: str = ""):
         self.parser = DocumentParser()
         self.segmenter = DocumentSegmenter()
         self.classifier = PageTypeClassifier()
         self.deterministic = DeterministicExtractor()
-        self.ai_mapper = SemanticMapper()
+        self.ai_mapper = SemanticMapper(api_key_override=ai_api_key)
         self.validator = ValidationEngine()
 
         self.section_map = {
