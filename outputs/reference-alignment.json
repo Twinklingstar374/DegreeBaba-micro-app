@@ -1,0 +1,393 @@
+[
+  {
+    "page_type": "university",
+    "exists": true,
+    "path": "/Users/bulbulagarwalla/DegreeBaba-micro-app/references/html/nmims-university-page.html",
+    "title": "NMIMS University Online — Courses, Fees, Admission 2026 | DegreeBaba",
+    "sections": [
+      {
+        "level": "h1",
+        "heading": "NMIMS University",
+        "acf_fields": []
+      },
+      {
+        "level": "h3",
+        "heading": "Get Free Counselling",
+        "acf_fields": []
+      },
+      {
+        "level": "h2",
+        "heading": "About NMIMS Online",
+        "acf_fields": [
+          "about_heading",
+          "about_content"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Why Choose NMIMS Online?",
+        "acf_fields": [
+          "why_choose_heading",
+          "why_choose_content"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "NMIMS Online Facts",
+        "acf_fields": [
+          "facts_heading",
+          "facts",
+          "stat_students",
+          "stat_alumni",
+          "stat_hiring_partners",
+          "stat_faculty"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Accreditations & Rankings",
+        "acf_fields": [
+          "accreditations_heading",
+          "accreditations",
+          "naac_grade",
+          "ugc_approved"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Programs & Fee Structure",
+        "acf_fields": [
+          "programs_heading",
+          "programs_table"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Admission Process",
+        "acf_fields": [
+          "admission_heading",
+          "admission_steps"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "EMI & Financial Assistance",
+        "acf_fields": [
+          "emi_heading",
+          "emi_content"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Examination Process",
+        "acf_fields": [
+          "exam_heading",
+          "exam_content"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Faculty Members",
+        "acf_fields": [
+          "faculty_heading",
+          "faculty_members"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Placement & Career Services",
+        "acf_fields": [
+          "placement_heading",
+          "placement_content",
+          "placement_partners"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Student Reviews",
+        "acf_fields": [
+          "reviews_heading",
+          "reviews"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Frequently Asked Questions",
+        "acf_fields": [
+          "faqs_heading",
+          "faqs"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Not sure if NMIMS is right for you? Talk to an expert — for free.",
+        "acf_fields": []
+      }
+    ]
+  },
+  {
+    "page_type": "course",
+    "exists": true,
+    "path": "/Users/bulbulagarwalla/DegreeBaba-micro-app/references/html/nmims-online-mba.html",
+    "title": "NMIMS Online MBA 2026 — Fees, Syllabus, Admission | DegreeBaba",
+    "sections": [
+      {
+        "level": "h1",
+        "heading": "NMIMS Online MBA 2026",
+        "acf_fields": []
+      },
+      {
+        "level": "h3",
+        "heading": "Apply for NMIMS Online MBA",
+        "acf_fields": []
+      },
+      {
+        "level": "h2",
+        "heading": "About the Program",
+        "acf_fields": [
+          "about_heading",
+          "about_content"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "NMIMS Online MBA — Program Highlights",
+        "acf_fields": [
+          "highlights_heading",
+          "highlights"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Accreditations & Rankings",
+        "acf_fields": [
+          "accreditations_heading",
+          "accreditations",
+          "naac_grade",
+          "ugc_status"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Specializations",
+        "acf_fields": [
+          "specializations_heading",
+          "specializations_intro",
+          "specializations"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Fee Structure & EMI",
+        "acf_fields": [
+          "fee_heading",
+          "fee_plans",
+          "emi_content"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Eligibility Criteria",
+        "acf_fields": [
+          "eligibility_heading",
+          "eligibility_content"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Admission Process",
+        "acf_fields": [
+          "admission_heading",
+          "admission_steps"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Syllabus & Curriculum",
+        "acf_fields": [
+          "syllabus_heading",
+          "syllabus_content"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Placement & Career Services",
+        "acf_fields": [
+          "placement_heading",
+          "placement_content",
+          "placement_partners",
+          "placement_stat_1",
+          "placement_stat_2",
+          "placement_stat_3"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Job Profiles & Average Salary",
+        "acf_fields": [
+          "jobs_heading",
+          "job_profiles"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Sample Certificate",
+        "acf_fields": [
+          "certificate_description"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Student Reviews",
+        "acf_fields": [
+          "reviews_heading",
+          "reviews"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Frequently Asked Questions",
+        "acf_fields": [
+          "faqs_heading",
+          "faqs"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Not sure if NMIMS Online MBA is right for you? Talk to an expert — free.",
+        "acf_fields": []
+      }
+    ]
+  },
+  {
+    "page_type": "specialization",
+    "exists": true,
+    "path": "/Users/bulbulagarwalla/DegreeBaba-micro-app/references/html/nmims-mba-marketing.html",
+    "title": "NMIMS Online MBA in Marketing Management 2026 — Fees, Syllabus, Jobs | DegreeBaba",
+    "sections": [
+      {
+        "level": "h1",
+        "heading": "NMIMS Online MBA in Marketing Management",
+        "acf_fields": []
+      },
+      {
+        "level": "h3",
+        "heading": "Apply for MBA Marketing",
+        "acf_fields": []
+      },
+      {
+        "level": "h2",
+        "heading": "About the Specialization",
+        "acf_fields": [
+          "about_heading",
+          "about_content"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "MBA in Marketing — Program Highlights",
+        "acf_fields": [
+          "highlights_heading",
+          "highlights"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Eligibility Criteria",
+        "acf_fields": [
+          "eligibility_heading",
+          "eligibility_content"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Fee Structure & EMI",
+        "acf_fields": [
+          "fee_heading",
+          "fee_plans",
+          "emi_content"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Other MBA Specializations",
+        "acf_fields": [
+          "other_specs_heading",
+          "other_specs"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Syllabus & Curriculum",
+        "acf_fields": [
+          "syllabus_heading",
+          "syllabus_content"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Examination Process",
+        "acf_fields": [
+          "exam_heading",
+          "exam_content"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Admission Process",
+        "acf_fields": [
+          "admission_heading",
+          "admission_steps"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Placement & Career Services",
+        "acf_fields": [
+          "placement_heading",
+          "placement_content",
+          "placement_partners",
+          "placement_stat_1",
+          "placement_stat_2",
+          "placement_stat_3"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Job Opportunities & Salary",
+        "acf_fields": [
+          "jobs_heading",
+          "job_profiles"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Sample Certificate",
+        "acf_fields": [
+          "certificate_description"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Student Reviews",
+        "acf_fields": [
+          "reviews_heading",
+          "reviews"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Frequently Asked Questions",
+        "acf_fields": [
+          "faqs_heading",
+          "faqs"
+        ]
+      },
+      {
+        "level": "h2",
+        "heading": "Ready to advance your marketing career? Get expert guidance — free.",
+        "acf_fields": []
+      }
+    ]
+  }
+]

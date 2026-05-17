@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from src.pipeline import ContentPipeline
+from src.reference.html_analyzer import get_all_reference_alignments
 
 DESKTOP = Path.home() / "Desktop"
 SAMPLE_ZIP = DESKTOP / "drive-download-20260513T174643Z-3-001.zip"
@@ -80,6 +81,8 @@ def main() -> None:
 
     summary_path = OUT_DIR / "validation-summary.json"
     summary_path.write_text(json.dumps(summaries, indent=2, ensure_ascii=False))
+    reference_alignments = get_all_reference_alignments()
+    (OUT_DIR / "reference-alignment.json").write_text(json.dumps(reference_alignments, indent=2, ensure_ascii=False))
 
     markdown = [
         "# DegreeBaba MVP QA Validation Report",
@@ -121,6 +124,24 @@ def main() -> None:
             "- **Validation Score:** An aggregate metric (0-100) calculated based on mapping completeness, structural validity, and extraction confidence. Errors heavily penalize the score.",
             "",
             "> **Note:** A high number of warnings is expected and acceptable. They primarily indicate semantically ambiguous or optional fields that the pipeline intentionally flagged for a human editor to review, rather than indicating a pipeline failure.",
+            "",
+            "## Reference HTML Alignment",
+            "",
+            "The MVP reads the three supplied NMIMS final HTML pages and maps each final website section to the parser's ACF field set.",
+            "",
+            "| Page Type | Reference Sections | Mapped Sections | Reference File |",
+            "|---|:---:|:---:|---|",
+        ]
+    )
+    for alignment in reference_alignments:
+        h2_sections = [section for section in alignment["sections"] if section["level"] == "h2"]
+        mapped_sections = [section for section in h2_sections if section["acf_fields"]]
+        markdown.append(
+            f"| {alignment['page_type'].capitalize()} | {len(h2_sections)} | {len(mapped_sections)} | `{alignment['path']}` |"
+        )
+
+    markdown.extend(
+        [
             "",
             "## Conclusion",
             "",

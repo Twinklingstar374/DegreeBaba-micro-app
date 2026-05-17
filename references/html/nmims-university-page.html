@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NMIMS University Online — Courses, Fees, Admission 2026 | DegreeBaba</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1F3D;--navy2:#1B3A6B;--blue:#1558D6;
+  --orange:#E84010;--org2:#FF5528;--amber:#F59E0B;--green:#16A34A;
+  --white:#fff;--off:#F7F8FA;--ink:#111827;--ink2:#374151;
+  --muted:#6B7280;--border:#E5E7EB;--blight:#F3F4F6;
+  --r:10px;--r2:14px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+button{font-family:'Poppins',sans-serif;cursor:pointer}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+@media(max-width:768px){.wrap{padding:0 18px}}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:300;background:#fff;box-shadow:0 1px 0 var(--border)}
+.nav-inner{display:flex;align-items:center;height:66px;gap:24px}
+.logo{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.logo-mark{width:36px;height:36px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-mark svg{width:20px;height:20px}
+.logo-name{font-size:20px;font-weight:800;letter-spacing:-.3px}
+.logo-name .deg{color:#94A3B8}.logo-name .bab{color:var(--orange)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nl{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:7px;white-space:nowrap;transition:all .14s}
+.nl:hover{background:var(--off);color:var(--ink)}
+.nl.hi{background:var(--navy);color:#fff;font-weight:600}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:8px}
+.nav-phone{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--ink);border:1.5px solid var(--border);border-radius:7px;padding:7px 13px;white-space:nowrap}
+.nav-phone svg{width:13px;height:13px;color:var(--orange)}
+.btn-counsel{background:var(--orange);color:#fff;font-size:13px;font-weight:700;border:none;padding:10px 20px;border-radius:8px;white-space:nowrap;transition:background .14s}
+.btn-counsel:hover{background:var(--org2)}
+@media(max-width:1000px){.nav-links{display:none}.nav-phone{display:none}}
+
+/* ── BREADCRUMB ── */
+.breadcrumb{background:var(--off);border-bottom:1px solid var(--border);padding:10px 0}
+.bc-in{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
+.bc-in a{color:var(--muted);transition:color .14s}.bc-in a:hover{color:var(--orange)}
+.bc-sep{color:var(--border)}
+.bc-in span{color:var(--ink);font-weight:600}
+
+/* ── HERO ── */
+.hero{background:#F7F8FA;padding:56px 0 0;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(14,31,61,.06) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;z-index:0}
+/* remove old radial glow */ .hero-dummy::before{content:'';position:absolute;top:-150px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(30,80,180,.3) 0%,transparent 70%);pointer-events:none}
+.hero-wave{position:relative;z-index:2;margin-top:40px;line-height:0}
+.hero-wave svg{display:block;width:100%;height:52px}
+.hero-inner{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start;position:relative;z-index:1}
+.hero-uni-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(14,31,61,.06);border:1px solid rgba(14,31,61,.1);color:var(--ink2);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:5px 13px;border-radius:100px;margin-bottom:20px}
+.hero-uni-name{font-size:clamp(28px,3.5vw,46px);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.03em;margin-bottom:8px}
+.hero-uni-full{font-size:16px;color:var(--muted);margin-bottom:20px;font-weight:400}
+.hero-desc{font-size:15px;color:var(--ink2);line-height:1.7;max-width:580px;margin-bottom:28px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+.hb{display:flex;align-items:center;gap:7px;background:rgba(14,31,61,.05);border:1px solid rgba(14,31,61,.1);border-radius:100px;padding:7px 14px;font-size:12px;font-weight:600;color:var(--ink2)}
+.hb svg{width:14px;height:14px;flex-shrink:0}
+.hb.green{border-color:rgba(22,163,74,.3);color:var(--green);background:rgba(22,163,74,.06)}
+.hb.amber{border-color:rgba(245,158,11,.3);color:#B45309;background:rgba(245,158,11,.06)}
+.hb.blue{border-color:rgba(21,88,214,.2);color:var(--blue);background:rgba(21,88,214,.05)}
+.hero-stats{display:flex;gap:28px;flex-wrap:wrap;padding-top:24px;border-top:1px solid rgba(14,31,61,.1)}
+.hs{display:flex;flex-direction:column}
+.hs-n{font-size:22px;font-weight:900;color:var(--navy);line-height:1;letter-spacing:-.02em}
+.hs-n span{color:var(--orange)}
+.hs-l{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* Lead card */
+.lcard{background:#fff;border-radius:16px;padding:28px;box-shadow:0 12px 40px rgba(14,31,61,.12);position:relative;z-index:2}
+.lcard-tag{display:inline-flex;align-items:center;gap:6px;background:#FFF0EB;color:var(--orange);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:12px}
+.lcard-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.lcard h3{font-size:17px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.lcard > p{font-size:13px;color:var(--muted);margin-bottom:18px}
+.lf{margin-bottom:11px}
+.lf label{display:block;font-size:10px;font-weight:700;color:var(--ink2);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px}
+.lf input,.lf select{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:8px;font-family:'Poppins',sans-serif;font-size:13px;color:var(--ink);background:#fff;outline:none;transition:border .14s;-webkit-appearance:none}
+.lf input:focus,.lf select:focus{border-color:var(--orange)}
+.lf input::placeholder{color:#9CA3AF}
+.lf select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center}
+.btn-lf{width:100%;background:var(--orange);color:#fff;font-size:14px;font-weight:700;border:none;padding:13px;border-radius:9px;margin-top:4px;transition:background .14s}
+.btn-lf:hover{background:var(--org2)}
+.lcard-note{font-size:11px;color:var(--muted);text-align:center;margin-top:8px}
+.lcard-proof{display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid var(--blight)}
+.lcp-avs{display:flex}
+.lcp-av{width:24px;height:24px;border-radius:50%;border:2px solid #fff;margin-right:-6px;font-size:9px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center}
+.lcp-text{font-size:11px;color:var(--muted)}.lcp-text strong{color:var(--ink)}
+
+@media(max-width:960px){.hero-inner{grid-template-columns:1fr}.hero{padding:40px 0 0}}
+
+/* ── PAGE LAYOUT ── */
+.page-body{display:grid;grid-template-columns:1fr 340px;gap:36px;align-items:start;padding:52px 0 72px}
+.main-col{min-width:0}
+.side-col{position:sticky;top:82px;display:flex;flex-direction:column;gap:20px}
+@media(max-width:960px){.page-body{grid-template-columns:1fr}.side-col{display:none}}
+
+/* ── SECTION BLOCKS ── */
+.section-block{background:#fff;border:1.5px solid var(--border);border-radius:var(--r2);margin-bottom:24px;overflow:hidden}
+.sb-head{display:flex;align-items:center;gap:10px;padding:20px 24px;border-bottom:1px solid var(--border);background:var(--off)}
+.sb-head-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sb-head h2{font-size:17px;font-weight:700;color:var(--navy)}
+.sb-body{padding:24px}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:7px;margin-bottom:8px}
+.sec-label::before{content:'';width:18px;height:2px;background:var(--orange);border-radius:2px;display:block}
+.sec-h{font-size:clamp(22px,2.5vw,30px);font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.2;margin-bottom:8px}
+.body-text{font-size:14px;color:var(--ink2);line-height:1.8}
+.body-text p{margin-bottom:12px}
+.body-text p:last-child{margin-bottom:0}
+
+/* Quick facts */
+.facts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.fact-item{background:var(--off);border-radius:var(--r);padding:14px 16px;display:flex;flex-direction:column;gap:3px}
+.fact-label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.07em}
+.fact-value{font-size:14px;font-weight:700;color:var(--ink)}
+.fact-value.green{color:var(--green)}
+.fact-value.orange{color:var(--orange)}
+
+/* Pros list */
+.pros-list{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.pro-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink2);line-height:1.6}
+.pro-check{width:20px;height:20px;border-radius:50%;background:rgba(22,163,74,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.pro-check svg{width:10px;height:10px;color:var(--green)}
+
+/* Accreditations */
+.acc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:4px}
+.acc-badge{display:flex;align-items:center;gap:10px;border:1.5px solid var(--border);border-radius:var(--r);padding:12px 16px;background:#fff;transition:border-color .14s}
+.acc-badge:hover{border-color:var(--navy)}
+.acc-badge-icon{width:40px;height:40px;border-radius:8px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;letter-spacing:.02em;flex-shrink:0;text-align:center;line-height:1.2}
+.acc-badge-name{font-size:13px;font-weight:700;color:var(--ink)}
+.acc-badge-sub{font-size:11px;color:var(--muted)}
+
+/* Admission steps */
+.steps{display:flex;flex-direction:column;gap:0}
+.step-row{display:flex;gap:16px;position:relative;padding-bottom:24px}
+.step-row:last-child{padding-bottom:0}
+.step-row:last-child .step-line{display:none}
+.step-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.step-num{width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1}
+.step-row:nth-child(even) .step-num{background:var(--orange)}
+.step-line{width:2px;flex:1;background:var(--border);margin:4px 0}
+.step-content{padding-top:6px;flex:1}
+.step-content h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.step-content p{font-size:13px;color:var(--ink2);line-height:1.65}
+
+/* Courses table */
+.courses-table{width:100%;border-collapse:collapse;font-size:13px}
+.courses-table th{background:var(--navy);color:#fff;padding:12px 16px;text-align:left;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.courses-table th:first-child{border-radius:8px 0 0 0}
+.courses-table th:last-child{border-radius:0 8px 0 0}
+.courses-table td{padding:13px 16px;border-bottom:1px solid var(--border);vertical-align:top}
+.courses-table tr:last-child td{border-bottom:none}
+.courses-table tr:hover td{background:var(--off)}
+.prog-name{font-weight:700;color:var(--navy)}
+.prog-fee{font-weight:700;color:var(--orange)}
+.prog-elig{color:var(--ink2);line-height:1.5}
+
+/* Faculty table */
+.faculty-table{width:100%;border-collapse:collapse;font-size:13px}
+.faculty-table th{background:var(--navy);color:#fff;padding:11px 14px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.faculty-table td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:middle}
+.faculty-table tr:last-child td{border-bottom:none}
+.faculty-table tr:hover td{background:var(--off)}
+.faculty-av{width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.faculty-name{font-weight:700;color:var(--ink)}
+.faculty-desig{font-size:11px;color:var(--muted)}
+
+/* EMI */
+.emi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:4px}
+.emi-card{background:var(--off);border-radius:var(--r);padding:16px;text-align:center;border:1.5px solid var(--border);transition:border-color .14s}
+.emi-card:hover{border-color:var(--orange)}
+.emi-months{font-size:28px;font-weight:900;color:var(--navy);letter-spacing:-.02em;line-height:1}
+.emi-label{font-size:11px;color:var(--muted);margin-top:4px}
+.emi-banks{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.bank-chip{background:#fff;border:1.5px solid var(--border);border-radius:6px;padding:6px 12px;font-size:12px;font-weight:600;color:var(--ink2)}
+
+/* ── EMI redesign ── */
+.emi-hero{margin-top:18px;display:grid;grid-template-columns:1.55fr 1fr;border-radius:var(--r2);overflow:hidden;border:1.5px solid var(--border);background:#fff}
+.emi-hero-left{padding:24px 26px;background:
+  radial-gradient(120% 80% at 0% 0%, rgba(22,163,74,.08), transparent 55%),
+  linear-gradient(180deg,#fff,#FAFBFC)}
+.emi-hero-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(22,163,74,.1);color:var(--green);font-size:10.5px;font-weight:800;letter-spacing:.1em;padding:5px 10px;border-radius:100px;margin-bottom:14px}
+.emi-hero-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(22,163,74,.2)}
+.emi-hero-title{font-size:26px;font-weight:900;color:var(--navy);letter-spacing:-.025em;line-height:1.1;margin-bottom:8px}
+.emi-hero-sub{font-size:13.5px;color:var(--ink2);line-height:1.6;max-width:430px;margin-bottom:18px}
+.emi-tenures{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.emi-ten{border:1.5px solid var(--border);border-radius:10px;padding:12px 8px;text-align:center;background:#fff;transition:all .15s}
+.emi-ten:hover{border-color:var(--green);transform:translateY(-1px)}
+.emi-ten.hl{background:var(--navy);border-color:var(--navy)}
+.emi-ten.hl .emi-ten-n{color:#fff}
+.emi-ten.hl .emi-ten-l{color:rgba(255,255,255,.7)}
+.emi-ten-n{font-size:22px;font-weight:900;color:var(--navy);letter-spacing:-.02em;line-height:1}
+.emi-ten-l{font-size:10.5px;color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-top:4px}
+.emi-hero-right{background:var(--navy);color:#fff;padding:24px 26px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.emi-hero-right::before{content:'';position:absolute;top:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(255,85,40,.25),transparent 70%)}
+.emi-hero-rate{font-size:64px;font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1;position:relative;z-index:1}
+.emi-hero-rate-l{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:6px;position:relative;z-index:1}
+.emi-hero-divider{height:1px;background:rgba(255,255,255,.15);margin:18px 0;position:relative;z-index:1}
+.emi-feat-list{list-style:none;display:flex;flex-direction:column;gap:9px;position:relative;z-index:1}
+.emi-feat-list li{display:flex;align-items:center;gap:9px;font-size:12.5px;color:rgba(255,255,255,.92);font-weight:500}
+.emi-feat-list svg{flex-shrink:0;color:#34D399;background:rgba(52,211,153,.15);border-radius:50%;padding:3px;width:18px;height:18px}
+
+.emi-banks-block{margin-top:16px;border:1.5px solid var(--border);border-radius:var(--r2);padding:20px 22px;background:#fff}
+.emi-banks-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.emi-banks-title{font-size:14px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:8px}
+.emi-banks-count{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 7px;border-radius:100px;background:var(--orange);color:#fff;font-size:11px;font-weight:800}
+.emi-banks-sub{font-size:12px;color:var(--muted)}
+.emi-banks-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.emi-bank{border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;font-size:12.5px;font-weight:600;color:var(--ink);background:var(--off);text-align:center;transition:all .15s;position:relative}
+.emi-bank:hover{border-color:var(--navy);background:#fff;color:var(--navy)}
+
+.schol-card{margin-top:16px;display:flex;align-items:stretch;gap:0;border-radius:var(--r2);overflow:hidden;border:1.5px solid rgba(22,163,74,.25);background:linear-gradient(135deg,rgba(22,163,74,.05),rgba(22,163,74,.02))}
+.schol-medal{width:74px;flex-shrink:0;background:var(--green);display:flex;align-items:center;justify-content:center;position:relative}
+.schol-medal::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0 8px,rgba(255,255,255,.06) 8px 9px)}
+.schol-body{padding:16px 20px}
+.schol-eyebrow{font-size:10.5px;font-weight:800;letter-spacing:.12em;color:var(--green);margin-bottom:4px}
+.schol-title{font-size:17px;font-weight:800;color:var(--navy);letter-spacing:-.01em;margin-bottom:4px}
+.schol-pct{color:var(--green);font-size:22px;font-weight:900;letter-spacing:-.02em}
+.schol-desc{font-size:12.5px;color:var(--ink2);line-height:1.55}
+
+@media(max-width:720px){
+  .emi-hero{grid-template-columns:1fr}
+  .emi-hero-rate{font-size:48px}
+  .emi-tenures{grid-template-columns:repeat(4,1fr)}
+}
+
+/* Placement */
+.placement-services{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px}
+.ps-item{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);line-height:1.5}
+.ps-ic{width:20px;height:20px;border-radius:50%;background:rgba(232,64,16,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.ps-ic svg{width:10px;height:10px;color:var(--orange)}
+.recruiters{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.recruiter-chip{background:var(--off);border:1.5px solid var(--border);border-radius:8px;padding:9px 16px;font-size:13px;font-weight:600;color:var(--ink);transition:border-color .14s}
+.recruiter-chip:hover{border-color:var(--orange)}
+
+/* Exam */
+.exam-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.exam-card{border:1.5px solid var(--border);border-radius:var(--r);padding:18px;background:var(--off)}
+.exam-card h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.exam-card p{font-size:13px;color:var(--ink2);line-height:1.65}
+
+/* Reviews */
+.reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.rev-card{background:var(--off);border-radius:var(--r2);padding:20px;border:1.5px solid var(--border);transition:all .2s}
+.rev-card:hover{border-color:var(--orange);background:#fff}
+.rev-stars{display:flex;gap:2px;margin-bottom:10px}
+.rev-star{width:14px;height:14px;fill:var(--amber)}
+.rev-text{font-size:13px;color:var(--ink2);line-height:1.7;margin-bottom:14px}
+.rev-author{font-size:12px;font-weight:700;color:var(--navy)}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.fq{background:#fff;border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden;transition:border-color .15s}
+.fq.on{border-color:var(--navy)}
+.fq-q{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:17px 20px;cursor:pointer;font-size:14px;font-weight:600;color:var(--ink);user-select:none}
+.fq-ic{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.fq.on .fq-ic{background:var(--navy);border-color:var(--navy)}
+.fq-ic svg{width:12px;height:12px;color:var(--muted);transition:transform .22s}
+.fq.on .fq-ic svg{color:#fff;transform:rotate(45deg)}
+.fq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .22s;font-size:13px;color:var(--ink2);line-height:1.75}
+.fq.on .fq-a{max-height:200px;padding:0 20px 16px}
+
+/* Sidebar cards */
+.side-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r2);overflow:hidden}
+.side-card-head{background:var(--navy);padding:14px 18px;font-size:13px;font-weight:700;color:#fff}
+.side-card-body{padding:16px 18px}
+.quick-link{display:flex;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid var(--blight);font-size:13px;color:var(--ink2);cursor:pointer;transition:color .14s}
+.quick-link:last-child{border-bottom:none}
+.quick-link:hover{color:var(--orange)}
+.quick-link svg{width:14px;height:14px;color:var(--muted);flex-shrink:0}
+.compare-card{background:var(--off);border:1.5px solid var(--border);border-radius:var(--r2);padding:20px}
+.compare-card h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.compare-card p{font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.5}
+.btn-compare{width:100%;background:var(--navy);color:#fff;font-size:13px;font-weight:700;border:none;padding:11px;border-radius:8px;transition:background .14s}
+.btn-compare:hover{background:#162D57}
+
+/* CTA strip */
+.cta-strip{background:var(--navy);padding:48px 0;position:relative;overflow:hidden}
+.cta-strip::before{content:'';position:absolute;top:-60px;right:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none}
+.cta-in{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.cta-in h2{font-size:clamp(22px,2.8vw,32px);font-weight:800;color:#fff;letter-spacing:-.02em;max-width:500px}
+.cta-in h2 span{color:var(--amber)}
+.cta-btns{display:flex;gap:12px;flex-shrink:0;flex-wrap:wrap}
+.btn-orange{background:var(--orange);color:#fff;font-size:14px;font-weight:700;border:none;padding:14px 28px;border-radius:9px;transition:all .14s}
+.btn-orange:hover{background:var(--org2)}
+.btn-white-out{background:transparent;color:#fff;font-size:14px;font-weight:600;border:2px solid rgba(255,255,255,.3);padding:12px 24px;border-radius:9px;transition:all .14s}
+.btn-white-out:hover{border-color:rgba(255,255,255,.6)}
+
+/* ── FOOTER ── */
+.footer{background:#000;padding:56px 0 0;color:rgba(255,255,255,.6)}
+.footer-grid{display:grid;grid-template-columns:260px repeat(4,1fr);gap:36px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-brand > p{font-size:13px;line-height:1.75;margin:14px 0 20px;color:rgba(255,255,255,.4)}
+.footer-socials{display:flex;gap:8px}
+.fsb{width:34px;height:34px;border-radius:7px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .14s}
+.fsb:hover{background:rgba(255,255,255,.1)}
+.fsb svg{width:14px;height:14px;color:rgba(255,255,255,.5)}
+.footer-col h5{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:#fff;margin-bottom:8px;transition:color .14s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:#fff}
+.footer-btm-links{display:flex;gap:18px}
+.footer-btm-links a{color:rgba(255,255,255,.3);transition:color .14s}
+.footer-btm-links a:hover{color:rgba(255,255,255,.6)}
+@media(max-width:1060px){.footer-grid{grid-template-columns:1fr 1fr;gap:24px}}
+@media(max-width:600px){.footer-grid{grid-template-columns:1fr}}
+
+/* Tweaks */
+#tweaks{position:fixed;bottom:24px;right:24px;background:#fff;border-radius:14px;box-shadow:0 8px 40px rgba(0,0,0,.18);padding:20px;width:220px;z-index:9999;display:none;border:1.5px solid var(--border)}
+#tweaks h4{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
+#tweaks h4 button{background:none;border:none;font-size:18px;color:var(--muted);cursor:pointer}
+.tw-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.tw-row span{font-size:12px;color:var(--ink2);font-weight:500}
+.tog{width:36px;height:20px;border-radius:100px;background:var(--border);position:relative;cursor:pointer;transition:background .2s}
+.tog.on{background:var(--navy)}
+.tog::after{content:'';position:absolute;width:14px;height:14px;border-radius:50%;background:#fff;top:3px;left:3px;transition:left .18s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.tog.on::after{left:19px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="Homepage.html" class="logo">
+        <div class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 1L2 5.5v7C2 18.25 6.5 22.75 12 24c5.5-1.25 10-5.75 10-11.5v-7L12 1z" fill="white" opacity=".9"/><path d="M7 12l5-3 5 3-5 3-5-3z" fill="#0E1F3D"/></svg></div>
+        <span class="logo-name"><span class="deg">degree</span><span class="bab">baba</span></span>
+      </a>
+      
+      <div class="nav-right">
+        <nav class="nav-links">
+        <a class="nl hi" href="#">Explore Programs</a>
+        <a class="nl" href="#">Compare</a>
+        <a class="nl" href="#">About Us</a>
+      </nav>
+        <div class="nav-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.87a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 13.92v3z"/></svg>993-00-67777</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="wrap">
+    <div class="bc-in">
+      <a href="Homepage.html">Home</a><span class="bc-sep">›</span>
+      <a href="#">Universities</a><span class="bc-sep">›</span>
+      <span>NMIMS University</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-l">
+        <div class="hero-uni-tag">Online University</div>
+        <h1 class="hero-uni-name">NMIMS University</h1>
+        <p class="hero-uni-full">Narsee Monjee Institute of Management Studies — Online CDOE</p>
+        <p class="hero-desc">One of India's most reputed private deemed universities offering fully valid online UG and PG programs. NMIMS follows the motto of <em>"Upskill, Upgrade, Uninterrupted"</em> and has empowered over 185,000 students to date.</p>
+        <div class="hero-badges">
+          <span class="hb green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>UGC Approved</span>
+          <span class="hb amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>NAAC A+</span>
+          <span class="hb blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>100% Online</span>
+          <span class="hb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Est. 1981 · CDOE 1994</span>
+        </div>
+        <div class="hero-stats">
+          <div class="hs"><div class="hs-n">185<span>K+</span></div><div class="hs-l">Students Empowered</div></div>
+          <div class="hs"><div class="hs-n">82<span>K+</span></div><div class="hs-l">Alumni Worldwide</div></div>
+          <div class="hs"><div class="hs-n">20<span>K+</span></div><div class="hs-l">Hiring Partners</div></div>
+          <div class="hs"><div class="hs-n">140<span>+</span></div><div class="hs-l">Faculty (IIM/IIT)</div></div>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;">
+          <button style="background:var(--orange);color:#fff;font-size:14px;font-weight:700;border:none;padding:12px 26px;border-radius:100px;cursor:pointer;transition:background .14s" onmouseover="this.style.background='var(--org2)'" onmouseout="this.style.background='var(--orange)'">Explore Programs →</button>
+          <button style="background:transparent;color:var(--navy);font-size:14px;font-weight:600;border:2px solid rgba(14,31,61,.25);padding:12px 26px;border-radius:100px;cursor:pointer;transition:border-color .14s" onmouseover="this.style.borderColor='var(--navy)'" onmouseout="this.style.borderColor='rgba(14,31,61,.25)'">Download Brochure</button>
+        </div>
+      </div>
+      <div class="hero-r">
+        <div class="lcard">
+          <div class="lcard-tag"><span class="lcard-tag-dot"></span>Free Service</div>
+          <h3>Get Free Counselling</h3>
+          <p>An NMIMS expert calls you within 24 hours</p>
+          <div class="lf"><label>Full Name</label><input type="text" placeholder="Your name"></div>
+          <div class="lf"><label>Phone Number</label><input type="tel" placeholder="Mobile number"></div>
+          <div class="lf"><label>Program of Interest</label>
+            <select><option value="" disabled selected>Choose a program</option><option>Online MBA</option><option>Online MBA (WX)</option><option>Online BBA</option><option>Online B.Com</option></select>
+          </div>
+          <button class="btn-lf">Get Free Counselling →</button>
+          <p class="lcard-note">No spam. Your data stays private.</p>
+          <div class="lcard-proof">
+            <div class="lcp-avs">
+              <div class="lcp-av" style="background:#E84010">R</div>
+              <div class="lcp-av" style="background:#1B3A6B">P</div>
+              <div class="lcp-av" style="background:#F59E0B;color:#000">A</div>
+            </div>
+            <div class="lcp-text"><strong>340+ students</strong> enquired about NMIMS this month</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave"><svg viewBox="0 0 1440 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,32 C360,56 1080,8 1440,32 L1440,52 L0,52 Z" fill="#ffffff"/></svg></div>
+</section>
+
+<!-- PAGE BODY -->
+<div class="wrap">
+  <div class="page-body">
+
+    <!-- MAIN COLUMN -->
+    <div class="main-col">
+
+      <!-- About NMIMS -->
+      <div class="section-block">
+        <div class="sb-head">
+          <div class="sb-head-icon" style="background:#EBF3FF"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1558D6" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <h2>About NMIMS Online</h2>
+        </div>
+        <div class="sb-body">
+          <div class="body-text">
+            <p>The Narsee Monjee Institute for Management Studies (NMIMS) was established in 1981. Since then, NMIMS has been among the top institutions in India offering quality education matching global standards. To make higher education more convenient and accessible, NMIMS initiated its Centre for Distance and Online Education (CDOE) in 1994, also known as NMIMS Online CDOE.</p>
+            <p>NMIMS Online CDOE offers several online undergraduate, postgraduate, and MBA (WX) programs. The courses are completely online and delivered through virtual learning platforms consisting of e-books, journals, and lecture transcripts with 24×7 access.</p>
+            <p>Choosing NMIMS Online is a strong choice — the university has a vast network of 82,000+ alumni across the world, 40+ years of legacy, 157,000+ lives transformed, and 20,000+ recruiters shaping dream careers for students.</p>
+          </div>
+          <div class="facts-grid" style="margin-top:20px">
+            <div class="fact-item"><span class="fact-label">Approval</span><span class="fact-value green">UGC · NAAC A+</span></div>
+            <div class="fact-item"><span class="fact-label">Established</span><span class="fact-value">1981 (CDOE: 1994)</span></div>
+            <div class="fact-item"><span class="fact-label">Mode of Learning</span><span class="fact-value">Open, Distance &amp; On-Campus</span></div>
+            <div class="fact-item"><span class="fact-label">NIRF Rank</span><span class="fact-value orange">#95 Overall · #52 University</span></div>
+            <div class="fact-item"><span class="fact-label">Alumni Network</span><span class="fact-value">82,000+ Worldwide</span></div>
+            <div class="fact-item"><span class="fact-label">Hiring Partners</span><span class="fact-value">20,000+ Recruiters</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Highlights / Pros -->
+      <div class="section-block">
+        <div class="sb-head">
+          <div class="sb-head-icon" style="background:#E8F5E9"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <h2>Why Choose NMIMS Online?</h2>
+        </div>
+        <div class="sb-body">
+          <div class="body-text">
+            <p>NMIMS Online offers a rich and holistic learning experience through its virtual learning environment and on-campus immersion programs & bootcamps.</p>
+          </div>
+          <div class="pros-list">
+            <div class="pro-item"><div class="pro-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div><div><strong>Best University for Online Degree:</strong> Received the Education Innovation Award, Entrepreneur India (2022) for best university offering an online degree.</div></div>
+            <div class="pro-item"><div class="pro-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div><div><strong>50+ Corporate MNC Partnerships:</strong> NGA-SCE has officially partnered with 50+ corporate MNCs and start-ups for NMIMS Online courses.</div></div>
+            <div class="pro-item"><div class="pro-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div><div><strong>Program Customization:</strong> Students can customize their course with a specialization of their choice and pursue it at their own pace.</div></div>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- NMIMS Online Facts -->
+      <div class="section-block">
+        <div class="sb-head">
+          <div class="sb-head-icon" style="background:#EBF3FF"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1558D6" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <h2>NMIMS Online Facts</h2>
+        </div>
+        <div class="sb-body">
+          <div class="pros-list">
+            <div class="pro-item"><div class="pro-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div><div><strong>Virtual Learning Environment:</strong> Rich and holistic learning experience with virtual learning environment and on-campus immersion program &amp; bootcamp.</div></div>
+            <div class="pro-item"><div class="pro-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div><div><strong>1 Connect Tool:</strong> Personalised guidance and support with timely resolution to student queries throughout the program.</div></div>
+            <div class="pro-item"><div class="pro-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div><div><strong>Career Services:</strong> 6-month access to job portals like IIMJobs, Updazz, and Hirist included with every program.</div></div>
+            <div class="pro-item"><div class="pro-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div><div><strong>MBA &amp; MBA (WX):</strong> Offers both regular online MBA and an executive MBA (WX) program designed for mid-senior working professionals.</div></div>
+            <div class="pro-item"><div class="pro-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div><div><strong>Experiential Learning:</strong> Real-world case studies, business simulation projects, and hands-on industry experiences across all specializations.</div></div>
+            <div class="pro-item"><div class="pro-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div><div><strong>Students Zone App:</strong> Accessible through phone or laptop — study anytime, anywhere with 24×7 availability.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accreditations -->
+      <div class="section-block">
+        <div class="sb-head">
+          <div class="sb-head-icon" style="background:#FFF3E6"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E84010" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+          <h2>Accreditations & Rankings</h2>
+        </div>
+        <div class="sb-body">
+          <div class="acc-grid">
+            <div class="acc-badge"><div class="acc-badge-icon">UGC</div><div><div class="acc-badge-name">University Grants Commission</div><div class="acc-badge-sub">Fully recognised degree</div></div></div>
+            <div class="acc-badge"><div class="acc-badge-icon" style="background:var(--orange)">NAAC<br>A+</div><div><div class="acc-badge-name">NAAC A+ccredited</div><div class="acc-badge-sub">"A+" Grade — top tier</div></div></div>
+            <div class="acc-badge"><div class="acc-badge-icon" style="background:var(--green)">NIRF</div><div><div class="acc-badge-name">NIRF Rank #95 Overall</div><div class="acc-badge-sub">#52 University · #24 Management</div></div></div>
+            <div class="acc-badge"><div class="acc-badge-icon" style="background:#7C3AED">AICTE</div><div><div class="acc-badge-name">4th Best Engineering</div><div class="acc-badge-sub">West India ranking</div></div></div>
+            <div class="acc-badge"><div class="acc-badge-icon" style="background:#B45309">AIU</div><div><div class="acc-badge-name">Association of Indian Universities</div><div class="acc-badge-sub">Member institution</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Programs & Fees -->
+      <div class="section-block" id="courses">
+        <div class="sb-head">
+          <div class="sb-head-icon" style="background:#EBF3FF"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1558D6" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+          <h2>Programs & Fee Structure</h2>
+        </div>
+        <div class="sb-body" style="padding:0;overflow-x:auto">
+          <table class="courses-table">
+            <thead>
+              <tr>
+                <th>Program</th>
+                <th>Fee Structure</th>
+                <th>Eligibility Criteria</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="prog-name">Online B.Com</div></td>
+                <td><div class="prog-fee">₹18,000 / semester</div></td>
+                <td><div class="prog-elig">HSC 10+2 in any discipline from a recognised board with 50% aggregate marks.</div></td>
+              </tr>
+              <tr>
+                <td><div class="prog-name">Online BBA</div></td>
+                <td><div class="prog-fee">₹25,000 / semester</div></td>
+                <td><div class="prog-elig">HSC 10+2 in any discipline from a recognised board with 50% aggregate marks.</div></td>
+              </tr>
+              <tr>
+                <td><div class="prog-name">Online MBA</div></td>
+                <td><div class="prog-fee">₹55,000 / semester</div></td>
+                <td><div class="prog-elig">Valid 3-year bachelor's degree in any discipline. Minimum 50% aggregate at graduation level.</div></td>
+              </tr>
+              <tr>
+                <td><div class="prog-name">Online MBA (WX)</div><div style="font-size:11px;color:var(--muted);margin-top:2px">Executive Program</div></td>
+                <td><div class="prog-fee">₹4,00,000 (full course)</div></td>
+                <td><div class="prog-elig">Valid 3-year bachelor's degree. Minimum 55% aggregate. 3+ years of relevant work experience.</div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Admission Process -->
+      <div class="section-block" id="admission">
+        <div class="sb-head">
+          <div class="sb-head-icon" style="background:#E8F5E9"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+          <h2>Admission Process</h2>
+        </div>
+        <div class="sb-body">
+          <div class="steps">
+            <div class="step-row">
+              <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
+              <div class="step-content"><h4>Visit & Register Online</h4><p>Visit the official website at online.nmims.edu and register online to create your applicant account.</p></div>
+            </div>
+            <div class="step-row">
+              <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
+              <div class="step-content"><h4>Fill the Application Form</h4><p>Complete the NMIMS online application form with all required personal, academic, and program details.</p></div>
+            </div>
+            <div class="step-row">
+              <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
+              <div class="step-content"><h4>Pay Application Fee</h4><p>Pay the NMIMS online application fee of <strong>₹1,200/-</strong> to process your application.</p></div>
+            </div>
+            <div class="step-row">
+              <div class="step-left"><div class="step-num">4</div><div class="step-line"></div></div>
+              <div class="step-content"><h4>Submit Supporting Documents</h4><p>Upload academic documents, a photo ID, and passport-size photographs along with your application form.</p></div>
+            </div>
+            <div class="step-row">
+              <div class="step-left"><div class="step-num">5</div><div class="step-line"></div></div>
+              <div class="step-content"><h4>Pay Course Fee</h4><p>Pay the course fee via demand draft in favour of <strong>"SVKM's NMIMS"</strong> payable at Mumbai.</p></div>
+            </div>
+            <div class="step-row">
+              <div class="step-left"><div class="step-num">6</div></div>
+              <div class="step-content"><h4>Receive Confirmation</h4><p>Wait for confirmation from the university. Once approved, the university will generate a unique student number for you.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMI & Financial Aid -->
+      <div class="section-block">
+        <div class="sb-head">
+          <div class="sb-head-icon" style="background:#F3E5F5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9333EA" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+          <h2>EMI & Financial Assistance</h2>
+        </div>
+        <div class="sb-body">
+          <div class="body-text"><p>NMIMS Online offers several financial assistance options including loans, no-cost EMI, and scholarship facilities to make quality education accessible for everyone.</p></div>
+
+          <!-- Hero EMI feature card -->
+          <div class="emi-hero">
+            <div class="emi-hero-left">
+              <div class="emi-hero-tag">
+                <span class="emi-hero-dot"></span>FEATURED OPTION
+              </div>
+              <div class="emi-hero-title">No-Cost EMI</div>
+              <div class="emi-hero-sub">Pay your fees in easy monthly instalments — zero interest, zero hidden charges, no credit card required.</div>
+              <div class="emi-tenures">
+                <div class="emi-ten"><div class="emi-ten-n">3</div><div class="emi-ten-l">months</div></div>
+                <div class="emi-ten"><div class="emi-ten-n">6</div><div class="emi-ten-l">months</div></div>
+                <div class="emi-ten"><div class="emi-ten-n">9</div><div class="emi-ten-l">months</div></div>
+                <div class="emi-ten hl"><div class="emi-ten-n">12</div><div class="emi-ten-l">months</div></div>
+              </div>
+            </div>
+            <div class="emi-hero-right">
+              <div class="emi-hero-rate">0%</div>
+              <div class="emi-hero-rate-l">Interest Rate</div>
+              <div class="emi-hero-divider"></div>
+              <ul class="emi-feat-list">
+                <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>No credit card needed</li>
+                <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Instant approval</li>
+                <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>No processing fee</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Partner banks -->
+          <div class="emi-banks-block">
+            <div class="emi-banks-head">
+              <div class="emi-banks-title">Partner Banks <span class="emi-banks-count">7</span></div>
+              <div class="emi-banks-sub">EMI processed instantly through any of our banking partners</div>
+            </div>
+            <div class="emi-banks-grid">
+              <div class="emi-bank">HDFC Bank</div>
+              <div class="emi-bank">ICICI Bank</div>
+              <div class="emi-bank">Axis Bank</div>
+              <div class="emi-bank">Citi Bank</div>
+              <div class="emi-bank">Standard Chartered</div>
+              <div class="emi-bank">HSBC</div>
+              <div class="emi-bank">Kotak Mahindra</div>
+            </div>
+          </div>
+
+          <!-- Scholarship callout -->
+          <div class="schol-card">
+            <div class="schol-medal">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="schol-body">
+              <div class="schol-eyebrow">DEFENCE PERSONNEL SCHOLARSHIP</div>
+              <div class="schol-title"><span class="schol-pct">20%</span> off on total program fee</div>
+              <div class="schol-desc">Available for armed forces &amp; defence personnel and their immediate family members. Apply at the time of enrolment.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Examination Process -->
+      <div class="section-block">
+        <div class="sb-head">
+          <div class="sb-head-icon" style="background:#FFF3E6"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E84010" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+          <h2>Examination Process</h2>
+        </div>
+        <div class="sb-body">
+          <div class="body-text"><p>The NMIMS Online examination process is similar for both UG and PG programs. Exams are conducted through an <strong>online proctored platform</strong> allowing students to appear from anywhere in the world — all they need is a good internet connection, a laptop, and a working webcam.</p></div>
+          <div class="exam-grid" style="margin-top:16px">
+            <div class="exam-card">
+              <h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--blue)"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Online Proctored Exams</h4>
+              <p>Appear from anywhere globally. Requires a laptop, webcam, and stable internet connection. No need to visit any examination centre.</p>
+            </div>
+            <div class="exam-card">
+              <h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--orange)"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Evaluation: IA + TEE</h4>
+              <p>Assessment follows an Internal Assessment (IA) + Term End Examination (TEE) format, ensuring a comprehensive evaluation of knowledge and skills.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Faculty -->
+      <div class="section-block">
+        <div class="sb-head">
+          <div class="sb-head-icon" style="background:#EBF3FF"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1558D6" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h2>Faculty Members</h2>
+        </div>
+        <div class="sb-body">
+          <div class="body-text"><p>NMIMS Online has <strong>140+ faculty members from IIMs/IITs</strong> and <strong>90+ PhD scholars</strong> who guide students throughout their academic careers and help develop promising professional careers.</p></div>
+          <div style="overflow-x:auto;margin-top:16px">
+            <table class="faculty-table">
+              <thead><tr><th>Faculty</th><th>Program</th><th>Designation & Qualification</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><div style="display:flex;align-items:center;gap:10px"><div class="faculty-av">AM</div><div><div class="faculty-name">Prof. Abhishek Mani</div></div></div></td>
+                  <td>Online MBA</td>
+                  <td><div class="faculty-desig">AVP & Head-Investor Relations, Reliance Infrastructure Ltd<br>MBA Finance from IIT Bombay · B.Tech Mech from IIT Kharagpur</div></td>
+                </tr>
+                <tr>
+                  <td><div style="display:flex;align-items:center;gap:10px"><div class="faculty-av" style="background:#7C3AED">AN</div><div><div class="faculty-name">Prof. Aishwarya Nagpal</div></div></div></td>
+                  <td>Online MBA</td>
+                  <td><div class="faculty-desig">Professor · PhD (Submitted) · M.Com · B.Com · UGC-NET</div></td>
+                </tr>
+                <tr>
+                  <td><div style="display:flex;align-items:center;gap:10px"><div class="faculty-av" style="background:var(--green)">AJ</div><div><div class="faculty-name">Prof. Ajay Jamuar</div></div></div></td>
+                  <td>Online MBA</td>
+                  <td><div class="faculty-desig">Global Head, Deutsche Bank Group (India)<br>ACA · CWA · MBA Finance from Texas Christian University, USA</div></td>
+                </tr>
+                <tr>
+                  <td><div style="display:flex;align-items:center;gap:10px"><div class="faculty-av" style="background:var(--orange)">AJ</div><div><div class="faculty-name">Prof. Aman Joshi</div></div></div></td>
+                  <td>Online MBA</td>
+                  <td><div class="faculty-desig">Professor · MBA in Business Design · BE in IT</div></td>
+                </tr>
+                <tr>
+                  <td><div style="display:flex;align-items:center;gap:10px"><div class="faculty-av" style="background:#065F46">AB</div><div><div class="faculty-name">Prof. Anisha Bose</div></div></div></td>
+                  <td>Online MBA</td>
+                  <td><div class="faculty-desig">Professor · PGDMM – Digital Marketing & Social Media<br>B.Tech in Computer Science Engineering</div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Placement -->
+      <div class="section-block">
+        <div class="sb-head">
+          <div class="sb-head-icon" style="background:#E8F5E9"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+          <h2>Placement & Career Services</h2>
+        </div>
+        <div class="sb-body">
+          <div class="body-text"><p>NMIMS Online courses are placement-assisted and the placement cell remains active throughout the course duration. Graduates are entitled to job opportunities with <strong>500+ hiring partners</strong>.</p></div>
+          <div class="placement-services" style="margin-top:16px">
+            <div class="ps-item"><div class="ps-ic"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div><span>Assessment of cognitive abilities and skills</span></div>
+            <div class="ps-item"><div class="ps-ic"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div><span>Resume & CV development with social media profiling</span></div>
+            <div class="ps-item"><div class="ps-ic"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div><span>Guidance from NMIMS career coaches</span></div>
+            <div class="ps-item"><div class="ps-ic"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div><span>Interview preparation support</span></div>
+            <div class="ps-item"><div class="ps-ic"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div><span>Access to IIMJobs, Updazz, and Hirist portals</span></div>
+            <div class="ps-item"><div class="ps-ic"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div><span>Dedicated job portal access for 6 months</span></div>
+          </div>
+          <div style="margin-top:20px">
+            <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:12px">Top Hiring Partners</div>
+            <div class="recruiters">
+              <span class="recruiter-chip">Indiamart</span>
+              <span class="recruiter-chip">Wockhardt</span>
+              <span class="recruiter-chip">Zalaris</span>
+              <span class="recruiter-chip">Milkbasket</span>
+              <span class="recruiter-chip">Tata</span>
+              <span class="recruiter-chip">Shopx</span>
+              <span class="recruiter-chip">500+ More</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Student Reviews -->
+      <div class="section-block">
+        <div class="sb-head">
+          <div class="sb-head-icon" style="background:#FFF8E1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <h2>Student Reviews</h2>
+        </div>
+        <div class="sb-body">
+          <div class="reviews-grid">
+            <div class="rev-card">
+              <div class="rev-stars"><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="rev-text">I was literally very confused while looking for an online MBA but my experience with NMIMS Online was seamless. The best thing I found was their program validity extension — really helpful for working professionals.</p>
+              <div class="rev-author">Verified Student · Online MBA</div>
+            </div>
+            <div class="rev-card">
+              <div class="rev-stars"><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="rev-text">My colleague suggested NMIMS Online and currently my second sem is going on. So far I am very satisfied with their academic deliverables and the support from faculty members.</p>
+              <div class="rev-author">Verified Student · Online MBA</div>
+            </div>
+            <div class="rev-card">
+              <div class="rev-stars"><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="rev-text">It's been a year since I completed my Online BBA from NMIMS. With their placement assistance I am now working at an MNC. I will surely enrol for their online MBA this year for better opportunities.</p>
+              <div class="rev-author">Verified Graduate · Online BBA</div>
+            </div>
+            <div class="rev-card">
+              <div class="rev-stars"><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="rev-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="rev-text">I got placed with NMIMS Online placement cell guidance and I really recommend it to everyone. Their faculty members are really supportive and the career services are genuinely excellent.</p>
+              <div class="rev-author">Verified Graduate · Online MBA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section-block">
+        <div class="sb-head">
+          <div class="sb-head-icon" style="background:#EBF3FF"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1558D6" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="sb-body">
+          <div class="faq-list">
+            <div class="fq on"><div class="fq-q" onclick="fq(this)">Is an NMIMS online degree valid?<div class="fq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="fq-a">Yes, every online degree offered at NMIMS Online is UGC-recognised and fully valid. The degrees are equivalent to on-campus degrees and are recognised by employers across India and globally.</div></div>
+            <div class="fq"><div class="fq-q" onclick="fq(this)">What are the fees for NMIMS online courses?<div class="fq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="fq-a">Fees range from ₹18,000 to ₹55,000 per semester for UG and PG programs, while the executive MBA (WX) is approximately ₹4,00,000 for the complete course. EMI options are available.</div></div>
+            <div class="fq"><div class="fq-q" onclick="fq(this)">Is the NMIMS online MBA good?<div class="fq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="fq-a">Yes, the NMIMS Online MBA is one of the most prominent online MBA courses in India. The program is NAAC A+ accredited, taught by IIM/IIT faculty, and has strong placement support with 500+ hiring partners.</div></div>
+            <div class="fq"><div class="fq-q" onclick="fq(this)">Who is eligible for the NMIMS online MBA?<div class="fq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="fq-a">Any candidate with a valid 3-year bachelor's degree from a recognised university with a minimum of 50% aggregate marks is eligible for the NMIMS Online MBA.</div></div>
+            <div class="fq"><div class="fq-q" onclick="fq(this)">Which is better, Manipal or NMIMS for online MBA?<div class="fq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="fq-a">Both universities are UGC-recognised with slightly different specialization options. NMIMS is stronger in finance and management while Manipal offers broader tech-focused specializations. Our counsellors can help you choose the right one based on your goals.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /main-col -->
+
+    <!-- SIDEBAR -->
+    <div class="side-col">
+
+      <!-- Lead card sidebar -->
+      <div class="lcard" style="box-shadow:0 4px 24px rgba(0,0,0,.1);border:1.5px solid var(--border)">
+        <div class="lcard-tag"><span class="lcard-tag-dot"></span>Free Service</div>
+        <h3>Get Free Counselling</h3>
+        <p>An NMIMS expert calls you within 24 hours</p>
+        <div class="lf"><input type="text" placeholder="Full Name"></div>
+        <div class="lf"><input type="tel" placeholder="Phone Number"></div>
+        <div class="lf"><select><option value="" disabled selected>Choose Program</option><option>Online MBA</option><option>Online MBA (WX)</option><option>Online BBA</option><option>Online B.Com</option></select></div>
+        <button class="btn-lf">Get Free Counselling →</button>
+        <p class="lcard-note">No spam. Your data stays private.</p>
+      </div>
+
+      <!-- Quick navigation -->
+      <div class="side-card">
+        <div class="side-card-head">Quick Navigation</div>
+        <div class="side-card-body">
+          <div class="quick-link" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>Programs & Fees</div>
+          <div class="quick-link" onclick="document.getElementById('admission').scrollIntoView({behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Admission Process</div>
+          <div class="quick-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>EMI & Scholarships</div>
+          <div class="quick-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Faculty</div>
+          <div class="quick-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Placement Support</div>
+          <div class="quick-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Student Reviews</div>
+        </div>
+      </div>
+
+      <!-- Compare card -->
+      <div class="compare-card">
+        <h4>Compare NMIMS with Others</h4>
+        <p>See how NMIMS stacks up against Amity, Manipal, and more — side by side.</p>
+        <button class="btn-compare">Compare Universities →</button>
+      </div>
+
+      <!-- Quick facts -->
+      <div class="side-card">
+        <div class="side-card-head">NMIMS At a Glance</div>
+        <div class="side-card-body">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding-bottom:10px;border-bottom:1px solid var(--blight)"><span style="color:var(--muted)">Approval</span><span style="font-weight:700;color:var(--green)">UGC + NAAC A+</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding-bottom:10px;border-bottom:1px solid var(--blight)"><span style="color:var(--muted)">Established</span><span style="font-weight:700">1981</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding-bottom:10px;border-bottom:1px solid var(--blight)"><span style="color:var(--muted)">MBA Fee</span><span style="font-weight:700;color:var(--orange)">₹55K/sem</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding-bottom:10px;border-bottom:1px solid var(--blight)"><span style="color:var(--muted)">EMI From</span><span style="font-weight:700">₹2,999/mo</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding-bottom:10px;border-bottom:1px solid var(--blight)"><span style="color:var(--muted)">Faculty</span><span style="font-weight:700">140+ IIM/IIT</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--muted)">Hiring Partners</span><span style="font-weight:700">20,000+</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /side-col -->
+
+  </div><!-- /page-body -->
+</div><!-- /wrap -->
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="wrap">
+    <div class="cta-in">
+      <h2>Not sure if NMIMS is right for you? <span>Talk to an expert — for free.</span></h2>
+      <div class="cta-btns">
+        <button class="btn-orange">Get Free Counselling</button>
+        <button class="btn-white-out">Compare Universities</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 1L2 5.5v7C2 18.25 6.5 22.75 12 24c5.5-1.25 10-5.75 10-11.5v-7L12 1z" fill="white" opacity=".9"/><path d="M7 12l5-3 5 3-5 3-5-3z" fill="#0E1F3D"/></svg></div>
+          <span class="logo-name"><span class="deg">degree</span><span class="bab">baba</span></span>
+        </div>
+        <p>India's most trusted online degree advisor. Free counselling, unbiased guidance, 40+ universities.</p>
+        <div class="footer-socials">
+          <div class="fsb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div>
+          <div class="fsb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+          <div class="fsb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
+        </div>
+      </div>
+      <div class="footer-col"><h5>NMIMS Programs</h5><a href="#">Online MBA</a><a href="#">Online MBA (WX)</a><a href="#">Online BBA</a><a href="#">Online B.Com</a></div>
+      <div class="footer-col"><h5>Other Universities</h5><a href="#">Amity University</a><a href="#">Manipal University</a><a href="#">LPU Online</a><a href="#">Jain University</a><a href="#">Chandigarh University</a></div>
+      <div class="footer-col"><h5>Quick Links</h5><a href="Homepage.html">Homepage</a><a href="#">Compare Universities</a><a href="#">Free Counselling</a><a href="#">Blog & Guides</a><a href="#">About Us</a></div>
+      <div class="footer-col"><h5>Contact Us</h5><a href="tel:99300-67777">📞 993-00-67777</a><a href="mailto:hello@degreebaba.com">✉ hello@degreebaba.com</a><a href="#">Mon–Sat, 9am–7pm IST</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DegreeBaba. All rights reserved.</span>
+      <div class="footer-btm-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Disclaimer</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- TWEAKS -->
+<div id="tweaks">
+  <h4>Tweaks <button onclick="document.getElementById('tweaks').style.display='none'">×</button></h4>
+  <div class="tw-row"><span>Sticky Header</span><div class="tog on" onclick="this.classList.toggle('on');document.querySelector('.nav').style.position=this.classList.contains('on')?'sticky':'relative'"></div></div>
+  <div class="tw-row"><span>Sticky Sidebar</span><div class="tog on" onclick="this.classList.toggle('on');document.querySelector('.side-col').style.position=this.classList.contains('on')?'sticky':'relative'"></div></div>
+</div>
+
+<script>
+const TWEAK_DEFAULTS=/*EDITMODE-BEGIN*/{"stickyHeader":true}/*EDITMODE-END*/;
+function fq(el){el.closest('.fq').classList.toggle('on')}
+window.addEventListener('message',e=>{
+  if(e.data?.type==='__activate_edit_mode') document.getElementById('tweaks').style.display='block';
+  if(e.data?.type==='__deactivate_edit_mode') document.getElementById('tweaks').style.display='none';
+});
+window.parent.postMessage({type:'__edit_mode_available'},'*');
+window.addEventListener('scroll',()=>{
+  document.querySelector('.nav').style.boxShadow=window.scrollY>8?'0 2px 20px rgba(0,0,0,.1)':'none';
+});
+</script>
+</body>
+</html>

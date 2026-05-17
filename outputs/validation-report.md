@@ -4,10 +4,10 @@
 
 ## Pipeline Status
 
-**DOCX Parsing** — Successful
-**Section Segmentation** — Successful
-**Deterministic Extraction** — Applied
-**Validation Engine** — Completed
+✅ **DOCX Parsing** — Successful
+✅ **Section Segmentation** — Successful
+✅ **Deterministic Extraction** — Applied
+✅ **Validation Engine** — Completed
 ⚠️ **Semantic Mappings** — Some optional or low-confidence fields flagged for manual review
 
 ## Coverage Note
@@ -29,6 +29,16 @@ The supplied dataset contains three DOCX files. The task brief asks for two file
 - **Validation Score:** An aggregate metric (0-100) calculated based on mapping completeness, structural validity, and extraction confidence. Errors heavily penalize the score.
 
 > **Note:** A high number of warnings is expected and acceptable. They primarily indicate semantically ambiguous or optional fields that the pipeline intentionally flagged for a human editor to review, rather than indicating a pipeline failure.
+
+## Reference HTML Alignment
+
+The MVP reads the three supplied NMIMS final HTML pages and maps each final website section to the parser's ACF field set.
+
+| Page Type | Reference Sections | Mapped Sections | Reference File |
+|---|:---:|:---:|---|
+| University | 13 | 12 | `/Users/bulbulagarwalla/DegreeBaba-micro-app/references/html/nmims-university-page.html` |
+| Course | 14 | 13 | `/Users/bulbulagarwalla/DegreeBaba-micro-app/references/html/nmims-online-mba.html` |
+| Specialization | 14 | 13 | `/Users/bulbulagarwalla/DegreeBaba-micro-app/references/html/nmims-mba-marketing.html` |
 
 ## Conclusion
 

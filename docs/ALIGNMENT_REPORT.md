@@ -17,6 +17,7 @@ This document maps the submitted MVP to the requirements in the DegreeBaba task 
 | Output WordPress-ready payload | Implemented | Validation screen exports ACF JSON payload; WordPress draft save is wired when credentials are configured. |
 | Manual review for uncertain mappings | Implemented | AI Mapping Review screen allows low-confidence mappings to be confirmed or reassigned. |
 | Test artifacts | Implemented | `scripts/generate_test_artifacts.py` processes supplied DOCX files and writes payloads plus a validation report to `outputs/`. |
+| HTML reference source-of-truth | Implemented | `src/reference/html_analyzer.py` reads the three NMIMS final HTML pages and maps visible sections to ACF fields. |
 
 ## Design/UI Coverage
 
@@ -33,6 +34,7 @@ This document maps the submitted MVP to the requirements in the DegreeBaba task 
 | Bulk Upload | Implemented as MVP screen. |
 | Upload History | Implemented as session history. |
 | Settings for WordPress/API credentials | Implemented as session settings. |
+| Reference Alignment | Implemented as a screen showing final HTML sections mapped to parser fields. |
 
 ## Known MVP Boundaries
 

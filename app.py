@@ -9,6 +9,7 @@ import streamlit as st
 
 from src.pipeline import ContentPipeline
 from src.mapping.semantic_mapper import SemanticMapper
+from src.reference.html_analyzer import get_all_reference_alignments
 from src.schemas.page_fields import get_fields, get_image_slots
 from src.utils.wp_client import WPClient
 
@@ -21,7 +22,7 @@ st.set_page_config(
 
 
 PAGE_TYPES = ["university", "course", "specialization", "category", "blog"]
-NAV_ITEMS = ["Dashboard", "New Upload", "AI Mapping Review", "Bulk Upload", "Upload History", "Settings"]
+NAV_ITEMS = ["Dashboard", "New Upload", "AI Mapping Review", "Reference Alignment", "Bulk Upload", "Upload History", "Settings"]
 
 
 def inject_css() -> None:
@@ -1032,6 +1033,49 @@ def render_ai_mapping_review() -> None:
             st.rerun()
 
 
+def render_reference_alignment() -> None:
+    topbar("Reference Alignment", "Final NMIMS HTML pages mapped to ACF fields used by this parser.")
+    st.markdown(
+        '<div class="info-banner">These checks read the three reference HTML files from Desktop and show which final website sections map to parser ACF fields.</div>',
+        unsafe_allow_html=True,
+    )
+
+    for alignment in get_all_reference_alignments():
+        page_type = page_label(alignment["page_type"])
+        if not alignment["exists"]:
+            st.markdown(f'<div class="error-banner">{page_type} reference file was not found: {alignment["path"]}</div>', unsafe_allow_html=True)
+            continue
+
+        with st.container(border=True):
+            st.markdown(f"### {page_type}")
+            st.caption(alignment["title"])
+            st.caption(alignment["path"])
+            st.markdown(
+                """
+                <div style="display:grid;grid-template-columns:0.18fr 1.1fr 1.4fr;gap:12px;color:var(--muted);font-size:12px;font-weight:700;text-transform:uppercase;margin-top:12px;">
+                    <span>Tag</span><span>Reference Section</span><span>ACF Fields</span>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+            for section in alignment["sections"]:
+                acf_fields = section["acf_fields"]
+                field_html = " ".join(f'<span class="badge badge-neutral mono">{field}</span>' for field in acf_fields) or '<span class="badge badge-error">Not mapped</span>'
+                row_class = "" if acf_fields else "error"
+                st.markdown(
+                    f"""
+                    <div class="section-row {row_class}">
+                        <div style="display:grid;grid-template-columns:0.18fr 1.1fr 1.4fr;gap:12px;align-items:center;">
+                            <span class="mono">{section['level']}</span>
+                            <span>{section['heading']}</span>
+                            <span>{field_html}</span>
+                        </div>
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+
+
 def render_bulk_upload() -> None:
     topbar("Bulk Upload")
     st.markdown(
@@ -1111,6 +1155,8 @@ def main() -> None:
         render_upload()
     elif screen == "AI Mapping Review":
         render_ai_mapping_review()
+    elif screen == "Reference Alignment":
+        render_reference_alignment()
     elif screen == "Bulk Upload":
         render_bulk_upload()
     elif screen == "Upload History":
