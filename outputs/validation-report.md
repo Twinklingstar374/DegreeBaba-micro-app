@@ -4,11 +4,11 @@
 
 ## Pipeline Status
 
-✅ **DOCX Parsing** — Successful
-✅ **Section Segmentation** — Successful
-✅ **Deterministic Extraction** — Applied
-✅ **Validation Engine** — Completed
-⚠️ **Semantic Mappings** — Some optional or low-confidence fields flagged for manual review
+**DOCX Parsing** — Successful 
+**Section Segmentation** — Successful
+**Deterministic Extraction** — Applied
+**Validation Engine** — Completed
+**Semantic Mappings** — Some optional or low-confidence fields flagged for manual review
 
 ## Coverage Note
 
