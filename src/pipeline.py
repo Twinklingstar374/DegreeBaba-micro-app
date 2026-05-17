@@ -171,6 +171,7 @@ class ContentPipeline:
         # 6. Validation Layer
         report = self.validator.validate(document_name, page_type, extracted_data)
         report.unmapped_sections = list(unmapped_segments.keys())
+        report.unmapped_section_content = unmapped_segments
         
         return report
 

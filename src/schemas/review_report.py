@@ -18,6 +18,7 @@ class ReviewReport(BaseModel):
     warnings: List[ValidationWarning] = Field(default_factory=list)
     fields_needing_review: List[str] = Field(default_factory=list)
     unmapped_sections: List[str] = Field(default_factory=list)
+    unmapped_section_content: Dict[str, str] = Field(default_factory=dict)
     quality_score: int = 0
     is_publishable: bool = False
 

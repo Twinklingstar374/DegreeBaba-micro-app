@@ -8,6 +8,7 @@ from typing import Any, Dict
 import streamlit as st
 
 from src.pipeline import ContentPipeline
+from src.mapping.semantic_mapper import SemanticMapper
 from src.schemas.page_fields import get_fields, get_image_slots
 from src.utils.wp_client import WPClient
 
@@ -965,9 +966,31 @@ def render_ai_mapping_review() -> None:
             unsafe_allow_html=True,
         )
     if st.session_state.get("ai_api_key"):
-        st.caption("Gemini/OpenAI key is configured for semantic fallback during parsing. This screen is the human review layer for uncertain results.")
+        st.caption("Gemini/OpenAI key is configured. AI can be used during parsing, and you can also run a remap below for unmapped sections.")
     else:
         st.caption("No AI key is configured, so these are deterministic mapping suggestions that need human review.")
+
+    ai_targets = [
+        field_name
+        for field_name in get_fields(report.page_type)
+        if not getattr(report.extracted_fields.get(field_name), "value", None)
+        or getattr(report.extracted_fields.get(field_name), "needs_review", False)
+    ][:12]
+    can_run_ai_remap = bool(st.session_state.get("ai_api_key") and report.unmapped_section_content and ai_targets)
+
+    if can_run_ai_remap:
+        if st.button("Run Gemini Remap", type="primary"):
+            mapper = SemanticMapper(api_key_override=st.session_state.get("ai_api_key", ""))
+            with st.spinner("Asking Gemini to remap unmapped sections..."):
+                ai_results = mapper.map_sections(report.unmapped_section_content, ai_targets)
+            if ai_results:
+                report.extracted_fields.update(ai_results)
+                st.success(f"Gemini returned {len(ai_results)} mapping suggestion(s). Review the updated fields below.")
+                st.rerun()
+            else:
+                st.warning("Gemini did not return new mappings. The deterministic suggestions are still available for manual review.")
+    elif st.session_state.get("ai_api_key") and not report.unmapped_section_content:
+        st.info("No unmapped source sections are available for Gemini to remap in this parsed report.")
     available_fields = get_fields(report.page_type)
 
     for field_name, field in fields:
@@ -998,7 +1021,7 @@ def render_ai_mapping_review() -> None:
 
     c1, c2 = st.columns([1, 1])
     with c1:
-        if st.button("Use AI Suggestions"):
+        if st.button("Accept Current Suggestions"):
             for _, field in fields:
                 field.needs_review = False
             st.success("All flagged mappings were accepted for this review session.")
