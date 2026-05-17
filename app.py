@@ -977,20 +977,21 @@ def render_ai_mapping_review() -> None:
         if not getattr(report.extracted_fields.get(field_name), "value", None)
         or getattr(report.extracted_fields.get(field_name), "needs_review", False)
     ][:12]
-    can_run_ai_remap = bool(st.session_state.get("ai_api_key") and report.unmapped_section_content and ai_targets)
+    unmapped_section_content = getattr(report, "unmapped_section_content", {}) or {}
+    can_run_ai_remap = bool(st.session_state.get("ai_api_key") and unmapped_section_content and ai_targets)
 
     if can_run_ai_remap:
         if st.button("Run Gemini Remap", type="primary"):
             mapper = SemanticMapper(api_key_override=st.session_state.get("ai_api_key", ""))
             with st.spinner("Asking Gemini to remap unmapped sections..."):
-                ai_results = mapper.map_sections(report.unmapped_section_content, ai_targets)
+                ai_results = mapper.map_sections(unmapped_section_content, ai_targets)
             if ai_results:
                 report.extracted_fields.update(ai_results)
                 st.success(f"Gemini returned {len(ai_results)} mapping suggestion(s). Review the updated fields below.")
                 st.rerun()
             else:
                 st.warning("Gemini did not return new mappings. The deterministic suggestions are still available for manual review.")
-    elif st.session_state.get("ai_api_key") and not report.unmapped_section_content:
+    elif st.session_state.get("ai_api_key") and not unmapped_section_content:
         st.info("No unmapped source sections are available for Gemini to remap in this parsed report.")
     available_fields = get_fields(report.page_type)
 
